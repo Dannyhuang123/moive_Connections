@@ -1,0 +1,33 @@
+/* Lingfei Lu A91046735
+ * Junxi Li A91105747
+ */
+
+The extension file takes three parameters, the first parameter is movie_casts.tsv
+, the second parameter is the output file. There is only one column
+of third parameter, which is the name. The third parameter is the actor you want
+explore. The format of output file should name<tab>number. For example 
+Bacon Kevin (I)	11793.
+
+The purpose of extension is to find how many actors are connectly to the input
+name not limited to direclty connected actors. Therefore in most of cases, the
+output is 11793, which is the total number of actors in movie_casts.tsv minus 1
+because actor should not connect to himself. 
+
+warning: The program will use approximately 1 minute for each input name. 
+We indirectly prove that all actors are connected to a single graph, because if
+we try arbitrary name, the number of actors which are connectd to him is 11793.
+Therefore please only use a single actor name per test, otherwise it will take
+a long time.
+
+BUT if we use different file other than movie_casts.tsv we will have different
+output, but different actors may be in different unconnected graph.
+
+How to run the program:
+
+./extension movie_casts.tsv actor_name.tsv output.txt
+
+The output will be in the format: Bacon, Kevin<tab>number. If you want to see
+different result, please use different input file, which not all actors are
+connected.
+
+
